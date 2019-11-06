@@ -1,0 +1,300 @@
+{
+    "name": "PyroActions",
+    "maps": [
+        {
+            "name": "Pyro",
+            "id": "8aec2adc-4b76-418b-849a-e74fbdd7c30e",
+            "actions": [
+                {
+                    "name": "Set Position",
+                    "type": "Value",
+                    "id": "e1e79081-d094-449a-8fa7-647647265077",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Set Height",
+                    "type": "Value",
+                    "id": "7c679ef2-610a-4a4f-a585-cbd058807e53",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Spawn Rate",
+                    "type": "Button",
+                    "id": "1495b185-1109-4e9c-b1bc-455b84030320",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Launch",
+                    "type": "Button",
+                    "id": "fb2e2203-5f06-4a32-8106-049f84ac2125",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "36d2309a-1ca2-473c-bd9f-55202c927ccc",
+                    "path": "<MidiDevice>/control001",
+                    "interactions": "",
+                    "processors": "Scale(factor=100)",
+                    "groups": "MIDI",
+                    "action": "Spawn Rate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "808d65d4-30b2-42de-9870-c62987f1309e",
+                    "path": "<Keyboard>/1",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Launch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7a442d5d-39d5-4919-a36e-38b42601ad67",
+                    "path": "<Keyboard>/2",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Launch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "453018d7-9a9e-42cf-b974-56f2b16fb72d",
+                    "path": "<Keyboard>/3",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Launch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3518ff51-6cde-4cee-a325-857653e2327b",
+                    "path": "<Keyboard>/4",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Launch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "83cf8997-5b2e-475f-b746-adc2e2c90762",
+                    "path": "<MidiDevice>/note040",
+                    "interactions": "Press(pressPoint=0.1)",
+                    "processors": "",
+                    "groups": "MIDI",
+                    "action": "Launch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "48d62624-16c2-4ca1-ad41-cf1eb0ec777f",
+                    "path": "<MidiDevice>/note041",
+                    "interactions": "Press(pressPoint=0.1)",
+                    "processors": "",
+                    "groups": "MIDI",
+                    "action": "Launch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0d098bad-7324-47df-9bb7-270447dae6b1",
+                    "path": "<MidiDevice>/note042",
+                    "interactions": "Press(pressPoint=0.1)",
+                    "processors": "",
+                    "groups": "MIDI",
+                    "action": "Launch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a90af6e3-d3cd-40b5-90d2-aee399b26447",
+                    "path": "<MidiDevice>/note043",
+                    "interactions": "Press(pressPoint=0.1)",
+                    "processors": "",
+                    "groups": "MIDI",
+                    "action": "Launch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "84588287-ec04-48c5-b523-727de30828aa",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "Clamp(min=0.2,max=0.2)",
+                    "groups": "Keyboard",
+                    "action": "Set Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "12c17f84-aec4-44cf-ab50-355951d1edda",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "Clamp(min=0.4,max=0.4)",
+                    "groups": "Keyboard",
+                    "action": "Set Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6e925098-4a24-450a-a1c2-b59d015faab8",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "Clamp(min=0.6,max=0.6)",
+                    "groups": "Keyboard",
+                    "action": "Set Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5590486b-6969-401d-885f-2b99e141fcea",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "Clamp(min=0.8,max=0.8)",
+                    "groups": "Keyboard",
+                    "action": "Set Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3879e577-8230-4312-aede-cbcf00885211",
+                    "path": "<MidiDevice>/note040",
+                    "interactions": "",
+                    "processors": "Clamp(min=0.2,max=0.2)",
+                    "groups": "MIDI",
+                    "action": "Set Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f0c86709-a8a3-4786-8546-474ba9f94a4d",
+                    "path": "<MidiDevice>/note041",
+                    "interactions": "",
+                    "processors": "Clamp(min=0.4,max=0.4)",
+                    "groups": "MIDI",
+                    "action": "Set Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c0759eab-070a-4b18-92ee-4ac1ecee1d88",
+                    "path": "<MidiDevice>/note042",
+                    "interactions": "",
+                    "processors": "Clamp(min=0.6,max=0.6)",
+                    "groups": "MIDI",
+                    "action": "Set Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b761d27d-950e-4c47-bb69-946bcaecf47d",
+                    "path": "<MidiDevice>/note043",
+                    "interactions": "",
+                    "processors": "Clamp(min=0.8,max=0.8)",
+                    "groups": "MIDI",
+                    "action": "Set Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bd6157bf-e9d6-4ccc-b244-20c9eabc156a",
+                    "path": "<MidiDevice>/note040",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MIDI",
+                    "action": "Set Height",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d8a11bb4-755b-4df3-95d4-cc5fc8e95d54",
+                    "path": "<MidiDevice>/note041",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MIDI",
+                    "action": "Set Height",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b94f295a-2f15-432c-af31-10e47db5d896",
+                    "path": "<MidiDevice>/note042",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MIDI",
+                    "action": "Set Height",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "52b8314f-34bb-410a-8356-ec062eb5ab6f",
+                    "path": "<MidiDevice>/note043",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MIDI",
+                    "action": "Set Height",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "MIDI",
+            "bindingGroup": "MIDI",
+            "devices": [
+                {
+                    "devicePath": "<MidiDevice>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

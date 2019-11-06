@@ -1,0 +1,17 @@
+{
+  "scopedRegistries": [
+    {
+      "name": "Keijiro",
+      "url": "https://registry.npmjs.com",
+      "scopes": [
+        "jp.keijiro"
+      ]
+    }
+  ],
+  "dependencies": {
+    "jp.keijiro.kino.post-processing": "2.0.1",
+    "jp.keijiro.minis": "1.0.1",
+    "com.unity.inputsystem": "1.0.0-preview.2",
+    "com.unity.render-pipelines.high-definition": "7.1.2"
+  }
+}
