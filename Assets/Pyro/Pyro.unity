@@ -319,9 +319,9 @@ GameObject:
   - component: {fileID: 512019774}
   - component: {fileID: 512019773}
   - component: {fileID: 512019777}
-  - component: {fileID: 512019776}
-  - component: {fileID: 512019778}
   - component: {fileID: 512019779}
+  - component: {fileID: 512019778}
+  - component: {fileID: 512019776}
   m_Layer: 0
   m_Name: Pyro
   m_TagString: Untagged
@@ -443,10 +443,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d6462cc38e1a3e48917392c74d7a7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Property:
-    m_Name: Spawn Rate
+  _property:
+    m_Name: Manual Spawn Height
   PlayerInput: {fileID: 990957984}
-  ActionName: Spawn Rate
+  Action:
+    Name: Set Height
 --- !u!114 &512019777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,11 +460,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdafc37f32b176349b1684c4455b98e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ExecuteInEditor: 1
+  m_ExecuteInEditor: 0
   m_Bindings:
-  - {fileID: 512019776}
-  - {fileID: 512019778}
   - {fileID: 512019779}
+  - {fileID: 512019778}
+  - {fileID: 512019776}
   m_VisualEffect: {fileID: 512019774}
 --- !u!114 &512019778
 MonoBehaviour:
@@ -477,10 +478,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d6462cc38e1a3e48917392c74d7a7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Property:
+  _property:
     m_Name: Manual Spawn Position
   PlayerInput: {fileID: 990957984}
-  ActionName: Set Position
+  Action:
+    Name: Set Position
 --- !u!114 &512019779
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -493,10 +495,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d6462cc38e1a3e48917392c74d7a7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Property:
-    m_Name: Manual Spawn Height
+  _property:
+    m_Name: Spawn Rate
   PlayerInput: {fileID: 990957984}
-  ActionName: Set Height
+  Action:
+    Name: Spawn Rate
 --- !u!1 &821752579
 GameObject:
   m_ObjectHideFlags: 0
