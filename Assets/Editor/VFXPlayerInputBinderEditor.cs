@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 using UnityEditor;
-using UnityEditor.UIElements;
 using System.Linq;
 
 namespace Pyro
