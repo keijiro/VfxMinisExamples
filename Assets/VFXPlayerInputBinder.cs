@@ -63,7 +63,7 @@ namespace Pyro
 
         public override string ToString()
         {
-            return string.Format("Input Value: '{0}' -> {1}", _property, Action?.Name);
+            return string.Format("Player Input: '{0}' -> {1}", _property, Action?.Name);
         }
 
         #endregion
