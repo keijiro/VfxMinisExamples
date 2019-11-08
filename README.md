@@ -10,7 +10,7 @@ in Unity with MIDI controllers.
 [visual effects]: https://unity.com/visual-effect-graph
 
 This project uses the [Minis] plugin, which adds MIDI input support to
-Unity's new input system.
+Unity's [new input system].
 
 [Minis]: https://github.com/keijiro/Minis
 [new input system]:
