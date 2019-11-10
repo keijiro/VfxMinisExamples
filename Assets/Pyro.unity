@@ -307,7 +307,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &512019772
+--- !u!1 &245139689
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -315,15 +315,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 512019775}
-  - component: {fileID: 512019774}
-  - component: {fileID: 512019773}
-  - component: {fileID: 512019777}
-  - component: {fileID: 512019776}
-  - component: {fileID: 512019778}
-  - component: {fileID: 512019781}
-  - component: {fileID: 512019780}
-  - component: {fileID: 512019779}
+  - component: {fileID: 245139694}
+  - component: {fileID: 245139693}
+  - component: {fileID: 245139692}
+  - component: {fileID: 245139691}
+  - component: {fileID: 245139690}
+  - component: {fileID: 245139695}
+  - component: {fileID: 245139698}
+  - component: {fileID: 245139697}
+  - component: {fileID: 245139696}
   m_Layer: 0
   m_Name: Pyro
   m_TagString: Untagged
@@ -331,13 +331,59 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!73398921 &512019773
+--- !u!114 &245139690
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245139689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f1ccb7695589aaaa3a46c31579265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _property:
+    m_Name: Spawn Rate
+  Action:
+    m_Name: Action
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 1e4376c1-73f8-404e-9b2d-e562513b9190
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 444e8bb8-7afe-4b18-a100-f6c7cdaac14e
+      m_Path: <MidiDevice>/control001
+      m_Interactions: 
+      m_Processors: Scale(factor=100)
+      m_Groups: 
+      m_Action: Action
+      m_Flags: 0
+--- !u!114 &245139691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245139689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdafc37f32b176349b1684c4455b98e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExecuteInEditor: 0
+  m_Bindings:
+  - {fileID: 245139690}
+  m_VisualEffect: {fileID: 245139693}
+--- !u!73398921 &245139692
 VFXRenderer:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512019772}
+  m_GameObject: {fileID: 245139689}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -371,13 +417,13 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!2083052967 &512019774
+--- !u!2083052967 &245139693
 VisualEffect:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512019772}
+  m_GameObject: {fileID: 245139689}
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: 896445552c8cd1f429b0f359cfeda6fe, type: 3}
   m_InitialEventName: OnPlay
@@ -386,23 +432,11 @@ VisualEffect:
   m_ResetSeedOnPlay: 1
   m_PropertySheet:
     m_Float:
-      m_Array:
-      - m_Value: 5
-        m_Name: Spawn Rate
-        m_Overridden: 1
-      - m_Value: 0
-        m_Name: Manual Spawn Position
-        m_Overridden: 1
-      - m_Value: 0
-        m_Name: Manual Spawn Height
-        m_Overridden: 1
+      m_Array: []
     m_Vector2f:
       m_Array: []
     m_Vector3f:
-      m_Array:
-      - m_Value: {x: 3, y: 1, z: 1}
-        m_Name: Extent
-        m_Overridden: 1
+      m_Array: []
     m_Vector4f:
       m_Array: []
     m_Uint:
@@ -419,13 +453,13 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
---- !u!4 &512019775
+--- !u!4 &245139694
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512019772}
+  m_GameObject: {fileID: 245139689}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -433,166 +467,120 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &512019776
+--- !u!114 &245139695
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512019772}
+  m_GameObject: {fileID: 245139689}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e32549e3faa77e345bcfe2b1e944eafe, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d6d432393220441bae83d3f49407d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _property:
-    m_Name: Spawn Rate
+  target: {fileID: 245139693}
+  EventName: OnLaunch1
   Action:
     m_Name: Action
     m_Type: 0
-    m_ExpectedControlType: Axis
-    m_Id: 67db7028-f387-430f-b2d3-aee3c29fcdc6
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: a0b56386-6c15-40b8-9c1e-935cb8d4dc09
-      m_Path: <MidiDevice>/control001
-      m_Interactions: 
-      m_Processors: Scale(factor=100)
-      m_Groups: 
-      m_Action: Action
-      m_Flags: 0
---- !u!114 &512019777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512019772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdafc37f32b176349b1684c4455b98e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ExecuteInEditor: 0
-  m_Bindings:
-  - {fileID: 512019776}
-  m_VisualEffect: {fileID: 512019774}
---- !u!114 &512019778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512019772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b47bc02a3ea69ab46a46412ef4d0f6f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 512019774}
-  _eventName: OnLaunch1
-  _action:
-    m_Name: Action
-    m_Type: 0
     m_ExpectedControlType: 
-    m_Id: f9edb53b-db1e-45d1-9309-b98cf2c56bd9
+    m_Id: ef262a09-2a71-49f6-8398-5548e90640e4
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 23412f0b-1292-4aec-a134-a2a6dd9b6bac
+      m_Id: bf18b104-f77d-46f3-b605-61c4c2520051
       m_Path: <MidiDevice>/note040
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Action
       m_Flags: 0
---- !u!114 &512019779
+--- !u!114 &245139696
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512019772}
+  m_GameObject: {fileID: 245139689}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b47bc02a3ea69ab46a46412ef4d0f6f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d6d432393220441bae83d3f49407d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 512019774}
-  _eventName: OnLaunch4
-  _action:
+  target: {fileID: 245139693}
+  EventName: OnLaunch4
+  Action:
     m_Name: Action
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: f9edb53b-db1e-45d1-9309-b98cf2c56bd9
+    m_Id: ef262a09-2a71-49f6-8398-5548e90640e4
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 23412f0b-1292-4aec-a134-a2a6dd9b6bac
+      m_Id: bf18b104-f77d-46f3-b605-61c4c2520051
       m_Path: <MidiDevice>/note043
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Action
       m_Flags: 0
---- !u!114 &512019780
+--- !u!114 &245139697
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512019772}
+  m_GameObject: {fileID: 245139689}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b47bc02a3ea69ab46a46412ef4d0f6f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d6d432393220441bae83d3f49407d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 512019774}
-  _eventName: OnLaunch3
-  _action:
+  target: {fileID: 245139693}
+  EventName: OnLaunch3
+  Action:
     m_Name: Action
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: f9edb53b-db1e-45d1-9309-b98cf2c56bd9
+    m_Id: ef262a09-2a71-49f6-8398-5548e90640e4
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 23412f0b-1292-4aec-a134-a2a6dd9b6bac
+      m_Id: bf18b104-f77d-46f3-b605-61c4c2520051
       m_Path: <MidiDevice>/note042
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Action
       m_Flags: 0
---- !u!114 &512019781
+--- !u!114 &245139698
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512019772}
+  m_GameObject: {fileID: 245139689}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b47bc02a3ea69ab46a46412ef4d0f6f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d6d432393220441bae83d3f49407d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 512019774}
-  _eventName: OnLaunch2
-  _action:
+  target: {fileID: 245139693}
+  EventName: OnLaunch2
+  Action:
     m_Name: Action
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: f9edb53b-db1e-45d1-9309-b98cf2c56bd9
+    m_Id: ef262a09-2a71-49f6-8398-5548e90640e4
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 23412f0b-1292-4aec-a134-a2a6dd9b6bac
+      m_Id: bf18b104-f77d-46f3-b605-61c4c2520051
       m_Path: <MidiDevice>/note041
       m_Interactions: 
       m_Processors: 

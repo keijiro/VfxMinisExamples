@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Pyro PlayerInput.unity
-    guid: c7714d76a45b34f4e996555478335ea6
+    path: Assets/Pyro.unity
+    guid: cdcd614ceb786e540ba9660961f56eaa
   m_configObjects: {}
