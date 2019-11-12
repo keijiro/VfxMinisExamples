@@ -110,17 +110,23 @@ namespace Minis.Utility
         // Note on callback for MIDI device
         void OnMidiNoteOn(MidiNoteControl note, float velocity)
         {
-            if (NoteFilter(note)) OnNoteOn(velocity);
+            if (NoteFilter(note)) OnNoteOn(note.noteNumber, velocity);
         }
 
         // Note on callback body
-        void OnNoteOn(float velocity)
+        void OnNoteOn(int note, float velocity)
         {
             _noteCount++;
             _timeOn = _timeOff = 0;
 
+            if (_target == null) return;
+
+            // Update the note property.
+            if (_target.HasUInt("NoteNumber"))
+                _target.SetUInt("NoteNumber", (uint)note);
+
             // Update the velocity property.
-            if (_target != null && _target.HasFloat("Velocity"))
+            if (_target.HasFloat("Velocity"))
                 _target.SetFloat("Velocity", velocity);
         }
 
@@ -141,7 +147,7 @@ namespace Minis.Utility
         void OnTestTrigger(InputAction.CallbackContext context)
         {
             var v = context.ReadValue<float>();
-            if (v > 0) OnNoteOn(v); else OnNoteOff();
+            if (v > 0) OnNoteOn(Random.Range(0, 128), v); else OnNoteOff();
         }
 #endif
 
