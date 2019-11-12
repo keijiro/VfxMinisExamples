@@ -6,7 +6,8 @@ using UnityEngine.VFX;
 namespace Minis.Utility
 {
     //
-    // 
+    // MIDI note animator class that controls visual effect with elapsed time
+    // from note-on/off.
     //
     public sealed class VfxMidiNoteAnimator : MonoBehaviour
     {
@@ -44,7 +45,7 @@ namespace Minis.Utility
 
         #region Local members
 
-        bool _isOn = false;
+        int _noteCount = 0;
         float _timeOn = 1e+6f;
         float _timeOff = 1e+6f;
 
@@ -115,7 +116,7 @@ namespace Minis.Utility
         // Note on callback body
         void OnNoteOn(float velocity)
         {
-            _isOn = true;
+            _noteCount++;
             _timeOn = _timeOff = 0;
 
             // Update the velocity property.
@@ -132,7 +133,7 @@ namespace Minis.Utility
         // Note off callback body
         void OnNoteOff()
         {
-            _isOn = false;
+            _noteCount--;
         }
 
 #if UNITY_EDITOR
@@ -179,7 +180,7 @@ namespace Minis.Utility
         void Update()
         {
             // Time accumulation
-            if (_isOn)
+            if (_noteCount > 0)
                 _timeOn += Time.deltaTime;
             else
                 _timeOff += Time.deltaTime;

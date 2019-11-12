@@ -3,6 +3,9 @@ using UnityEditor;
 
 namespace Minis.Utility
 {
+    //
+    // Custom inspector for VfxMidiNoteAnimator
+    //
     [CustomEditor(typeof(VfxMidiNoteAnimator))]
     sealed class VfxMidiNoteAnimatorEditor : Editor
     {
