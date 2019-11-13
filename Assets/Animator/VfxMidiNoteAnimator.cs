@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Layouts;
 using UnityEngine.VFX;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Minis.Utility
 {
@@ -24,10 +25,26 @@ namespace Minis.Utility
 
         #endregion
 
+        #region Public methods
+
+        // Manual note on/off
+
+        public void NoteOn(int note, float velocity)
+        {
+            OnNoteOn(note, velocity);
+        }
+
+        public void NoteOff(int note)
+        {
+            OnNoteOff(note);
+        }
+
+        #endregion
+
         #region Editable properties
 
         // Target VFX
-        [SerializeField] VisualEffect _target = null;
+        [SerializeField] VisualEffect [] _targets = null;
 
         // Note input
         [SerializeField] Channel _channel = Channel.All;
@@ -36,19 +53,23 @@ namespace Minis.Utility
         [SerializeField] int _lowestNote = 0;
         [SerializeField] int _highestNote = 127;
 
-#if UNITY_EDITOR
-        // Triggers for testing
-        [SerializeField] InputAction _testTrigger = null;
-#endif
-
         #endregion
 
         #region Local members
 
-        int _noteCount = 0;
-        float _timeOn = 1e+6f;
-        float _timeOff = 1e+6f;
+        // A class used to store a state of a note slot
+        class NoteSlot
+        {
+            public VisualEffect Vfx { get; set; }
+            public int Note { get; set; } = -1;
+            public float TimeOn { get; set; } = 1e+6f;
+            public float TimeOff { get; set; } = 1e+6f;
+        }
 
+        NoteSlot [] _slots;
+        Queue<NoteSlot> _freeSlotQueue;
+
+        // Check if a note matchs the note options.
         bool NoteFilter(MidiNoteControl note)
         {
             var device = (Minis.MidiDevice)note.device;
@@ -116,40 +137,39 @@ namespace Minis.Utility
         // Note on callback body
         void OnNoteOn(int note, float velocity)
         {
-            _noteCount++;
-            _timeOn = _timeOff = 0;
+            if (_freeSlotQueue.Count == 0) return;
+            var slot = _freeSlotQueue.Dequeue();
 
-            if (_target == null) return;
+            // Reset the note slot state.
+            slot.Note = note;
+            slot.TimeOn = slot.TimeOff = 0;
 
-            // Update the note property.
-            if (_target.HasUInt("NoteNumber"))
-                _target.SetUInt("NoteNumber", (uint)note);
-
-            // Update the velocity property.
-            if (_target.HasFloat("Velocity"))
-                _target.SetFloat("Velocity", velocity);
+            // Update the vfx properties.
+            var vfx = slot.Vfx;
+            if (vfx.HasUInt("NoteNumber")) vfx.SetUInt("NoteNumber", (uint)note);
+            if (vfx.HasFloat("Velocity")) vfx.SetFloat("Velocity", velocity);
         }
 
         // Note off callback for MIDI device
         void OnMidiNoteOff(MidiNoteControl note)
         {
-            if (NoteFilter(note)) OnNoteOff();
+            if (NoteFilter(note)) OnNoteOff(note.noteNumber);
         }
 
         // Note off callback body
-        void OnNoteOff()
+        void OnNoteOff(int note)
         {
-            _noteCount--;
+            foreach (var slot in _slots)
+            {
+                if (slot.Note == note)
+                {
+                    // Release the note slot.
+                    slot.Note = -1;
+                    _freeSlotQueue.Enqueue(slot);
+                    break;
+                }
+            }
         }
-
-#if UNITY_EDITOR
-        // Test trigger callback
-        void OnTestTrigger(InputAction.CallbackContext context)
-        {
-            var v = context.ReadValue<float>();
-            if (v > 0) OnNoteOn(Random.Range(0, 128), v); else OnNoteOff();
-        }
-#endif
 
         #endregion
 
@@ -157,16 +177,13 @@ namespace Minis.Utility
 
         void Start()
         {
+            // Initialize the note slots.
+            _slots = _targets.Select(vfx => new NoteSlot{Vfx = vfx}).ToArray();
+            _freeSlotQueue = new Queue<NoteSlot>(_slots);
+
             // Subscribe the device event.
             EditMidiDeviceSubscription(true);
             InputSystem.onDeviceChange += OnDeviceChange;
-
-#if UNITY_EDITOR
-            // Activate the test trigger callbacks.
-            _testTrigger.started += OnTestTrigger;
-            _testTrigger.canceled += OnTestTrigger;
-            _testTrigger.Enable();
-#endif
         }
 
         void OnDestroy()
@@ -174,28 +191,22 @@ namespace Minis.Utility
             // Unsubscribe the Input System.
             InputSystem.onDeviceChange -= OnDeviceChange;
             EditMidiDeviceSubscription(false);
-
-#if UNITY_EDITOR
-            // Deactivate the test trigger callbacks.
-            _testTrigger.started -= OnTestTrigger;
-            _testTrigger.canceled -= OnTestTrigger;
-            _testTrigger.Disable();
-#endif
         }
 
         void Update()
         {
-            // Time accumulation
-            if (_noteCount > 0)
-                _timeOn += Time.deltaTime;
-            else
-                _timeOff += Time.deltaTime;
+            // Update the note slots.
+            foreach (var slot in _slots)
+            {
+                if (slot.Note >= 0)
+                    slot.TimeOn += Time.deltaTime;
+                else
+                    slot.TimeOff += Time.deltaTime;
 
-            // Property update
-            if (_target != null && _target.HasFloat("NoteOnTime"))
-                _target.SetFloat("NoteOnTime", _timeOn);
-            if (_target != null && _target.HasFloat("NoteOffTime"))
-                _target.SetFloat("NoteOffTime", _timeOff);
+                var vfx = slot.Vfx;
+                if (vfx.HasFloat("NoteOnTime")) vfx.SetFloat("NoteOnTime", slot.TimeOn);
+                if (vfx.HasFloat("NoteOffTime")) vfx.SetFloat("NoteOffTime", slot.TimeOff);
+            }
         }
 
         #endregion

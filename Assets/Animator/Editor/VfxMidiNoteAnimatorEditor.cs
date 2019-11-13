@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEditor;
+using UnityEditorInternal;
 
 namespace Minis.Utility
 {
@@ -9,13 +10,13 @@ namespace Minis.Utility
     [CustomEditor(typeof(VfxMidiNoteAnimator))]
     sealed class VfxMidiNoteAnimatorEditor : Editor
     {
-        SerializedProperty _target;
+        ReorderableList _targetList;
+
         SerializedProperty _channel;
         SerializedProperty _source;
         SerializedProperty _noteNumber;
         SerializedProperty _lowestNote;
         SerializedProperty _highestNote;
-        SerializedProperty _testTrigger;
 
         static readonly string [] _noteNames =
             { "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B" };
@@ -48,20 +49,40 @@ namespace Minis.Utility
 
         void OnEnable()
         {
-            _target = serializedObject.FindProperty("_target");
+            _targetList = new ReorderableList(
+                serializedObject, serializedObject.FindProperty("_targets"),
+                true, false, true, true
+            );
+
+            _targetList.drawElementCallback = DrawTargetListElement;
+            _targetList.headerHeight = 3;
+
             _channel = serializedObject.FindProperty("_channel");
             _source = serializedObject.FindProperty("_source");
             _noteNumber = serializedObject.FindProperty("_noteNumber");
             _lowestNote = serializedObject.FindProperty("_lowestNote");
             _highestNote = serializedObject.FindProperty("_highestNote");
-            _testTrigger = serializedObject.FindProperty("_testTrigger");
+        }
+
+        void DrawTargetListElement(Rect rect, int index, bool active, bool focused)
+        {
+            rect.yMin++;
+            rect.yMax--;
+
+            EditorGUI.PropertyField(
+                rect,
+                _targetList.serializedProperty.GetArrayElementAtIndex(index),
+                GUIContent.none
+            );
         }
 
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
 
-            EditorGUILayout.PropertyField(_target);
+            EditorGUILayout.LabelField("Target Visual Effects");
+            _targetList.DoLayoutList();
+
             EditorGUILayout.PropertyField(_channel);
             EditorGUILayout.PropertyField(_source);
 
@@ -77,9 +98,6 @@ namespace Minis.Utility
                 NoteOctaveSelector("Highest Note", _highestNote);
                 break;
             }
-
-            EditorGUILayout.Space();
-            EditorGUILayout.PropertyField(_testTrigger);
 
             serializedObject.ApplyModifiedProperties();
         }
