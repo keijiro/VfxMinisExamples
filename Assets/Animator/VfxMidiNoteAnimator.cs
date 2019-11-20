@@ -148,6 +148,9 @@ namespace Minis.Utility
             var vfx = slot.Vfx;
             if (vfx.HasUInt("NoteNumber")) vfx.SetUInt("NoteNumber", (uint)note);
             if (vfx.HasFloat("Velocity")) vfx.SetFloat("Velocity", velocity);
+
+            // VFX note on event
+            vfx.SendEvent("OnNoteOn");
         }
 
         // Note off callback for MIDI device
@@ -163,6 +166,9 @@ namespace Minis.Utility
             {
                 if (slot.Note == note)
                 {
+                    // VFX note on event
+                    slot.Vfx.SendEvent("OnNoteOff");
+
                     // Release the note slot.
                     slot.Note = -1;
                     _freeSlotQueue.Enqueue(slot);
