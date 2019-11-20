@@ -157,7 +157,7 @@ MonoBehaviour:
   - {fileID: 1067495085}
   _channel: -1
   _source: 0
-  _noteNumber: 40
+  _noteNumbers: 2400000026000000
   _lowestNote: 0
   _highestNote: 131
 --- !u!4 &93076050
@@ -259,6 +259,7 @@ VFXRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -359,7 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Version: 6
+  m_Version: 7
   m_ObsoleteRenderingPath: 0
   m_ObsoleteFrameSettings:
     overrides: 0
@@ -417,6 +418,7 @@ MonoBehaviour:
   SMAAQuality: 2
   dithering: 0
   stopNaNs: 0
+  taaSharpenStrength: 0.6
   physicalParameters:
     m_Iso: 200
     m_ShutterSpeed: 0.005
@@ -433,9 +435,10 @@ MonoBehaviour:
   probeLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  hasPersistentHistory: 0
   m_RenderingPathCustomFrameSettings:
     bitDatas:
-      data1: 184684576768
+      data1: 734440390720
       data2: 536805376
     lodBias: 1
     lodBiasMode: 0
@@ -542,6 +545,7 @@ VFXRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 0}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -650,6 +654,7 @@ VFXRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -756,6 +761,7 @@ VFXRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 0}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

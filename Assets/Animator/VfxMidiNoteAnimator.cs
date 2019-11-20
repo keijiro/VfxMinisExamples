@@ -21,7 +21,7 @@ namespace Minis.Utility
             Ch9, Ch10, Ch11, Ch12, Ch13, Ch14, Ch15, Ch16
         }
 
-        public enum Source { AllNotes, SingleNote, NoteRange }
+        public enum Source { AllNotes, NoteNumbers, NoteRange }
 
         #endregion
 
@@ -49,7 +49,7 @@ namespace Minis.Utility
         // Note input
         [SerializeField] Channel _channel = Channel.All;
         [SerializeField] Source _source = Source.AllNotes;
-        [SerializeField] int _noteNumber = 60;
+        [SerializeField] int [] _noteNumbers = new [] { 60 };
         [SerializeField] int _lowestNote = 0;
         [SerializeField] int _highestNote = 127;
 
@@ -81,8 +81,9 @@ namespace Minis.Utility
 
             switch (_source)
             {
-            case Source.SingleNote:
-                return number == _noteNumber;
+            case Source.NoteNumbers:
+                foreach (var n in _noteNumbers) if (n == number) return true;
+                return false;
             case Source.NoteRange:
                 return _lowestNote <= number && number <= _highestNote;
             default: // Source.AllNotes:
