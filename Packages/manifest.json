@@ -9,9 +9,8 @@
     }
   ],
   "dependencies": {
-    "com.unity.inputsystem": "1.0.0-preview.2",
     "jp.keijiro.kino.post-processing": "2.1.4",
-    "jp.keijiro.minis": "1.0.5",
+    "jp.keijiro.minis": "1.0.6",
     "jp.keijiro.vfx-extra": "1.0.0"
   }
 }
