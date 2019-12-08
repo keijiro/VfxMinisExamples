@@ -9,7 +9,7 @@
     }
   ],
   "dependencies": {
-    "jp.keijiro.kino.post-processing": "2.1.4",
+    "jp.keijiro.kino.post-processing": "2.1.9",
     "jp.keijiro.minis": "1.0.6",
     "jp.keijiro.vfx-extra": "1.0.0"
   }
