@@ -2,7 +2,7 @@
   "dependencies": {
     "com.unity.inputsystem": {
       "version": "1.0.0",
-      "depth": 1,
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -72,6 +72,15 @@
       },
       "url": "https://packages.unity.com"
     },
+    "jp.keijiro.bolt.minis": {
+      "version": "1.0.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "jp.keijiro.minis": "1.0.8"
+      },
+      "url": "https://registry.npmjs.com"
+    },
     "jp.keijiro.kino.post-processing": {
       "version": "2.1.15",
       "depth": 0,
@@ -83,7 +92,7 @@
     },
     "jp.keijiro.minis": {
       "version": "1.0.8",
-      "depth": 0,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "jp.keijiro.rtmidi": "1.0.3",
@@ -93,7 +102,7 @@
     },
     "jp.keijiro.rtmidi": {
       "version": "1.0.3",
-      "depth": 1,
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://registry.npmjs.com"
