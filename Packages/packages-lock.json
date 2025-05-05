@@ -141,7 +141,7 @@
     },
     "com.unity.visualeffectgraph": {
       "version": "17.0.4",
-      "depth": 0,
+      "depth": 1,
       "source": "builtin",
       "dependencies": {
         "com.unity.shadergraph": "17.0.4",
@@ -158,6 +158,13 @@
       },
       "url": "https://registry.npmjs.com"
     },
+    "jp.keijiro.noiseshader": {
+      "version": "2.0.0",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://registry.npmjs.com"
+    },
     "jp.keijiro.rtmidi": {
       "version": "2.0.1",
       "depth": 1,
@@ -165,11 +172,24 @@
       "dependencies": {},
       "url": "https://registry.npmjs.com"
     },
-    "jp.keijiro.vfx-extra": {
-      "version": "1.0.0",
+    "jp.keijiro.shadergraphassets": {
+      "version": "2.5.2",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.shadergraph": "12.1.0",
+        "jp.keijiro.noiseshader": "2.0.0"
+      },
+      "url": "https://registry.npmjs.com"
+    },
+    "jp.keijiro.vfxgraphassets": {
+      "version": "3.9.1",
       "depth": 0,
       "source": "registry",
-      "dependencies": {},
+      "dependencies": {
+        "com.unity.visualeffectgraph": "17.0.0",
+        "jp.keijiro.shadergraphassets": "2.5.2"
+      },
       "url": "https://registry.npmjs.com"
     },
     "com.unity.modules.hierarchycore": {
