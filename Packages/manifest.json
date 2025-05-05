@@ -9,13 +9,9 @@
     }
   ],
   "dependencies": {
-    "jp.keijiro.kino.post-processing": "2.1.15",
+    "com.unity.render-pipelines.universal": "17.0.4",
+    "com.unity.visualeffectgraph": "17.0.4",
     "jp.keijiro.minis": "1.1.0",
-    "jp.keijiro.vfx-extra": "1.0.0",
-    "com.unity.modules.animation": "1.0.0",
-    "com.unity.modules.imageconversion": "1.0.0",
-    "com.unity.modules.physics": "1.0.0",
-    "com.unity.modules.uielements": "1.0.0",
-    "com.unity.modules.video": "1.0.0"
+    "jp.keijiro.vfx-extra": "1.0.0"
   }
 }
