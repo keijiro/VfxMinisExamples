@@ -11,7 +11,8 @@
   "dependencies": {
     "com.unity.render-pipelines.universal": "17.0.4",
     "jp.keijiro.klutter-tools": "2.1.0",
-    "jp.keijiro.minis": "1.1.0",
+    "jp.keijiro.metamesh": "1.2.0",
+    "jp.keijiro.minis": "1.2.0",
     "jp.keijiro.vfxgraphassets": "3.9.1"
   }
 }
