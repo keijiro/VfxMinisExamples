@@ -311,9 +311,6 @@ GameObject:
   - component: {fileID: 245139691}
   - component: {fileID: 245139690}
   - component: {fileID: 245139695}
-  - component: {fileID: 245139698}
-  - component: {fileID: 245139697}
-  - component: {fileID: 245139696}
   m_Layer: 0
   m_Name: Pyro
   m_TagString: Untagged
@@ -477,7 +474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 245139693}
-  EventName: OnLaunch1
+  EventName: OnLaunch
   Action:
     m_Name: Action
     m_Type: 0
@@ -488,100 +485,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: bf18b104-f77d-46f3-b605-61c4c2520051
-      m_Path: <MidiDevice>/note040
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Action
-      m_Flags: 0
-    m_Flags: 0
---- !u!114 &245139696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 245139689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d6d432393220441bae83d3f49407d82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 245139693}
-  EventName: OnLaunch4
-  Action:
-    m_Name: Action
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: ef262a09-2a71-49f6-8398-5548e90640e4
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: bf18b104-f77d-46f3-b605-61c4c2520051
-      m_Path: <MidiDevice>/note043
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Action
-      m_Flags: 0
-    m_Flags: 0
---- !u!114 &245139697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 245139689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d6d432393220441bae83d3f49407d82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 245139693}
-  EventName: OnLaunch3
-  Action:
-    m_Name: Action
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: ef262a09-2a71-49f6-8398-5548e90640e4
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: bf18b104-f77d-46f3-b605-61c4c2520051
-      m_Path: <MidiDevice>/note042
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Action
-      m_Flags: 0
-    m_Flags: 0
---- !u!114 &245139698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 245139689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d6d432393220441bae83d3f49407d82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 245139693}
-  EventName: OnLaunch2
-  Action:
-    m_Name: Action
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: ef262a09-2a71-49f6-8398-5548e90640e4
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: bf18b104-f77d-46f3-b605-61c4c2520051
-      m_Path: <MidiDevice>/note041
+      m_Path: <MidiDevice>/note*
       m_Interactions: 
       m_Processors: 
       m_Groups: 
