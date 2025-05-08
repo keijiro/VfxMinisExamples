@@ -1,3 +1,4 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Label text="Press a MIDI key to launch a firework. The velocity controls its size.&#10;You can also trigger auto-launch using CC1 (mod wheel.)" style="margin-top: 20px; margin-right: 20px; margin-bottom: 20px; margin-left: 20px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 15px;" />
+    <ui:Label text="Loading..." name="info" style="position: absolute; top: 20px; left: 20px; right: 20px; font-size: 15px;" />
+    <ui:Label text="Press a MIDI key to launch a firework. The velocity controls its size.&#10;You can also trigger auto-launch using CC1 (mod wheel.)" name="instructions" style="font-size: 15px; white-space: normal; position: absolute; bottom: 20px; left: 20px; right: 20px;" />
 </ui:UXML>
