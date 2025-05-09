@@ -578,14 +578,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21721932ed30c48dba1da51b0969cfe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _noteText: "<color=black>You can use a wildcard like \"<MidiDevice>/note*\" to
-    bind to all notes at once. However, Unity's Input System has a limitation: a
-    single binding can only have up to 256 controls. This becomes an issue when two
-    MIDI devices are connected, as they collectively expose 256 note controls \u2014
-    causing an error.\n\nTo work around this, this action uses 10 separate bindings
-    to cover the full range of MIDI notes."
+  _noteText: "You can use a wildcard like \"<MidiDevice>/note*\" to bind to all notes
+    at once. However, Unity's Input System has a limitation: a single binding can
+    only have up to 255 controls. This becomes an issue when two MIDI devices are
+    connected, as they collectively expose 256 note controls \u2014 causing an error.\n\nTo
+    work around this, this action uses 10 separate bindings to cover the full range
+    of MIDI notes."
   _showEditor: 0
-  _backgroundColor: {r: 1, g: 0.9092888, b: 0.41037738, a: 1}
+  _textColor: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
+  _backgroundColor: {r: 0.8962264, g: 0.81001395, b: 0.33397114, a: 1}
 --- !u!1 &761139606
 GameObject:
   m_ObjectHideFlags: 1
