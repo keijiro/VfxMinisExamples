@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 93076050}
   - component: {fileID: 93076049}
   m_Layer: 0
-  m_Name: Note Animator
+  m_Name: VFX Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,11 +153,6 @@ MonoBehaviour:
   - {fileID: 2112058989}
   - {fileID: 1025200269}
   - {fileID: 1067495085}
-  _channel: -1
-  _source: 0
-  _noteNumbers: 2400000026000000
-  _lowestNote: 0
-  _highestNote: 131
 --- !u!4 &93076050
 Transform:
   m_ObjectHideFlags: 0

@@ -148,6 +148,15 @@
         "com.unity.render-pipelines.core": "17.0.4"
       }
     },
+    "jp.keijiro.klak.math": {
+      "version": "2.1.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.mathematics": "1.2.6"
+      },
+      "url": "https://registry.npmjs.com"
+    },
     "jp.keijiro.klak.ui-toolkit-assets": {
       "version": "0.1.1",
       "depth": 0,
