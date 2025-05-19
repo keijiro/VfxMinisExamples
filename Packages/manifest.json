@@ -13,7 +13,7 @@
     "jp.keijiro.klak.ui-toolkit-assets": "0.1.1",
     "jp.keijiro.klutter-tools": "2.3.0",
     "jp.keijiro.metamesh": "1.2.0",
-    "jp.keijiro.minis": "file:../../Minis/Packages/jp.keijiro.minis",
+    "jp.keijiro.minis": "1.3.1",
     "jp.keijiro.vfxgraphassets": "3.9.1"
   }
 }
