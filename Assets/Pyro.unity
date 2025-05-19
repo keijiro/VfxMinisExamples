@@ -311,8 +311,8 @@ GameObject:
   - component: {fileID: 245139692}
   - component: {fileID: 245139691}
   - component: {fileID: 245139690}
-  - component: {fileID: 245139696}
   - component: {fileID: 245139695}
+  - component: {fileID: 245139696}
   m_Layer: 0
   m_Name: Pyro
   m_TagString: Untagged
@@ -366,6 +366,7 @@ MonoBehaviour:
   m_ExecuteInEditor: 0
   m_Bindings:
   - {fileID: 245139690}
+  - {fileID: 245139696}
   m_VisualEffect: {fileID: 245139693}
 --- !u!73398921 &245139692
 VFXRenderer:
@@ -479,87 +480,15 @@ MonoBehaviour:
   EventName: OnLaunch
   Action:
     m_Name: Action
-    m_Type: 0
-    m_ExpectedControlType: 
+    m_Type: 1
+    m_ExpectedControlType: Button
     m_Id: ef262a09-2a71-49f6-8398-5548e90640e4
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: bf18b104-f77d-46f3-b605-61c4c2520051
-      m_Path: <MidiDevice>/note*0
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Action
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 179db2a5-774c-460f-bc7d-f90210aa464e
-      m_Path: <MidiDevice>/note*1
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Action
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 7f7bfeb2-176d-4656-bf07-ffd2005ae552
-      m_Path: <MidiDevice>/note*2
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Action
-      m_Flags: 0
-    - m_Name: 
-      m_Id: aad37dae-729c-425d-8a36-66ddfed91c1b
-      m_Path: <MidiDevice>/note*3
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Action
-      m_Flags: 0
-    - m_Name: 
-      m_Id: d6694aa2-b954-49b8-88e9-746639577f81
-      m_Path: <MidiDevice>/note*4
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Action
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 1021f2f9-4ac4-4ddb-9110-00e8c17007eb
-      m_Path: <MidiDevice>/note*5
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Action
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 9c4333fc-892c-46d9-af36-25a737be8a6e
-      m_Path: <MidiDevice>/note*6
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Action
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 8db5f36b-3331-469d-959d-bdb0dba1911f
-      m_Path: <MidiDevice>/note*7
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Action
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 19fd6098-1398-4aa9-a6ca-57621f994714
-      m_Path: <MidiDevice>/note*8
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Action
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 586c4557-08cc-4478-affd-d752c1ae4207
-      m_Path: <MidiDevice>/note*9
+      m_Id: 0a8b06b6-bf41-4b49-849d-368ce630adf4
+      m_Path: <MidiDevice>/anyNoteVelocity
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -568,25 +497,35 @@ MonoBehaviour:
     m_Flags: 0
 --- !u!114 &245139696
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245139689}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21721932ed30c48dba1da51b0969cfe9, type: 3}
+  m_Script: {fileID: 11500000, guid: c25f1ccb7695589aaaa3a46c31579265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _noteText: "You can use a wildcard like \"<MidiDevice>/note*\" to bind to all notes
-    at once. However, Unity's Input System has a limitation: a single binding can
-    only have up to 255 controls. This becomes an issue when two MIDI devices are
-    connected, as they collectively expose 256 note controls \u2014 causing an error.\n\nTo
-    work around this, this action uses 10 separate bindings to cover the full range
-    of MIDI notes."
-  _showEditor: 0
-  _textColor: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
-  _backgroundColor: {r: 0.8962264, g: 0.81001395, b: 0.33397114, a: 1}
+  Property:
+    m_Name: Note Number
+  Action:
+    m_Name: Action
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: eb61a777-0ed6-482b-9833-e58478ec8168
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 94fd672a-356e-4b31-b8ea-ab57c1b0dcb8
+      m_Path: <MidiDevice>/anyNoteNumber
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Action
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1 &761139606
 GameObject:
   m_ObjectHideFlags: 1

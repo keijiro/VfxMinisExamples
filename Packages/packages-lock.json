@@ -2,7 +2,7 @@
   "dependencies": {
     "com.unity.burst": {
       "version": "1.8.21",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.mathematics": "1.2.1",
@@ -149,7 +149,7 @@
       }
     },
     "jp.keijiro.klak.ui-toolkit-assets": {
-      "version": "0.0.1",
+      "version": "0.1.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -174,14 +174,15 @@
       "url": "https://registry.npmjs.com"
     },
     "jp.keijiro.minis": {
-      "version": "1.2.0",
+      "version": "file:../../Minis/Packages/jp.keijiro.minis",
       "depth": 0,
-      "source": "registry",
+      "source": "local",
       "dependencies": {
-        "jp.keijiro.rtmidi": "2.1.1",
-        "com.unity.inputsystem": "1.0.1"
-      },
-      "url": "https://registry.npmjs.com"
+        "jp.keijiro.rtmidi": "2.1.2",
+        "com.unity.inputsystem": "1.0.1",
+        "com.unity.mathematics": "1.3.2",
+        "com.unity.burst": "1.8.21"
+      }
     },
     "jp.keijiro.noiseshader": {
       "version": "2.0.0",
@@ -191,7 +192,7 @@
       "url": "https://registry.npmjs.com"
     },
     "jp.keijiro.rtmidi": {
-      "version": "2.1.1",
+      "version": "2.1.2",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
